@@ -7,7 +7,7 @@ import torch
 import torch.nn.functional as F
 import torch.nn as nn
 import logging
-from srn.extensions import nms
+# from srn.extensions import nms
 import numpy as np
 
 logger = logging.getLogger('global')
