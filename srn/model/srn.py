@@ -75,8 +75,8 @@ class SRN(nn.Module):
                         continue
                     order = bpcs[:, -2].argsort()[::-1]
                     pre_bboxes = bpcs[order, :]
-                    keep_index = nms(torch.from_numpy(pre_bboxes[:, 1:-1]).float().cuda(), iou).numpy()
-                    post_bboxes = pre_bboxes[keep_index[:750]]
+                    #keep_index = nms(torch.from_numpy(pre_bboxes[:, 1:-1]).float().cuda(), iou).numpy()
+                    post_bboxes = pre_bboxes#[keep_index[:750]]
                     bboxes.append(post_bboxes)
                 bboxes = np.vstack(bboxes)
                 order = bboxes[:, -2].argsort()[::-1][:topN]
